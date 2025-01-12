@@ -1,0 +1,156 @@
+@use '../tools' as *;
+
+:root {
+	--container-padding-x: 20px;
+
+	@include mq($desktop) {
+		--container-padding-x: 150px;
+	}
+}
+
+// Containers :
+.full-container {
+	width: 100%;
+	padding-left: var(--container-padding-x);
+	padding-right: var(--container-padding-x);
+}
+
+.container {
+	width: 100%;
+	max-width: 1440px;
+	padding-left: var(--container-padding-x);
+	padding-right: var(--container-padding-x);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.small-container {
+	width: 100%;
+	max-width: 1440px;
+	padding-left: calc(var(--container-padding-x) * 2);
+	padding-right: calc(var(--container-padding-x) * 2);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+// Grid :
+@mixin grid {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	column-gap: 10px;
+	width: max(200px, calc(100% - 2 * $gutterMobile));
+	margin: 0 auto;
+
+	@include mq(desktop) {
+		grid-template-columns: repeat(32, minmax(0, 1fr));
+		column-gap: 10px;
+		max-width: 1920px;
+		margin: auto;
+	}
+}
+
+.grid-no-margin {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	column-gap: pxToRem(60);
+
+	@include mq(desktop) {
+		grid-template-columns: repeat(32, minmax(0, 1fr));
+		column-gap: 10px;
+		width: 100%;
+		max-width: 1920px;
+		margin: auto;
+	}
+
+	& > * {
+		grid-column: 1 / -1;
+	}
+}
+
+.grid {
+	@include grid;
+
+	& > * {
+		grid-column: 1 / -1;
+	}
+}
+
+.mb\:grid {
+	@include mq($until: desktop) {
+		@include grid;
+	}
+}
+
+.grid,
+.mb\:grid,
+.grid-no-margin {
+	@for $i from 1 through 13 {
+		.col-start-#{$i} {
+			grid-column-start: $i;
+		}
+
+		.col-end-#{$i} {
+			grid-column-end: $i;
+		}
+	}
+
+	@include mq($until: desktop) {
+		@for $i from 1 through 33 {
+			.mb\:col-start-#{$i} {
+				grid-column-start: $i;
+			}
+
+			.mb\:col-end-#{$i} {
+				grid-column-end: $i;
+			}
+		}
+	}
+
+	@include mq(tablet) {
+		@for $i from 1 through 33 {
+			.tb\:col-start-#{$i} {
+				grid-column-start: $i;
+			}
+
+			.tb\:col-end-#{$i} {
+				grid-column-end: $i;
+			}
+		}
+	}
+
+	@include mq(desktop) {
+		@for $i from 1 through 33 {
+			.dk\:col-start-#{$i} {
+				grid-column-start: $i;
+			}
+
+			.dk\:col-end-#{$i} {
+				grid-column-end: $i;
+			}
+		}
+	}
+
+	@include mq(mlarge) {
+		@for $i from 1 through 33 {
+			.ml\:col-start-#{$i} {
+				grid-column-start: $i;
+			}
+
+			.ml\:col-end-#{$i} {
+				grid-column-end: $i;
+			}
+		}
+	}
+
+	@include mq(large) {
+		@for $i from 1 through 33 {
+			.lg\:col-start-#{$i} {
+				grid-column-start: $i;
+			}
+
+			.lg\:col-end-#{$i} {
+				grid-column-end: $i;
+			}
+		}
+	}
+}

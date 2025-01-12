@@ -1,0 +1,21 @@
+@use 'fonts' as *;
+@use 'media-queries' as *;
+
+// Headings :
+@mixin fs-h1 {
+	font-size: pxToRem(40);
+	line-height: 1.2;
+	letter-spacing: pxToRem(4);
+
+	@include mq($from: desktop) {
+		font-size: pxToRem(80);
+		letter-spacing: pxToRem(8);
+	}
+}
+
+// Body :
+@mixin fs-body {
+	font-size: pxToRem(16);
+	line-height: 1.6;
+	letter-spacing: pxToRem(1.28);
+}

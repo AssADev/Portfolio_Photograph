@@ -1,0 +1,17 @@
+@forward 'globals';
+@use 'tools' as *;
+
+html {
+	color: $black;
+	font-size: $BASE_FONT_SIZE;
+}
+
+body {
+	color: $white;
+	background: $black; 
+}
+
+.app {
+	@include flex-center;
+	height: 100vh;
+}

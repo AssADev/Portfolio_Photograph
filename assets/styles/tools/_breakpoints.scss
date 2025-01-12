@@ -1,0 +1,20 @@
+// Breakpoints
+$mobile: 390px;
+$tablet: 768px;
+$desktop: 1024px;
+$mlarge: 1280px;
+$large: 1680px;
+$xlarge: 1920px;
+
+// Gutters
+$gutterMobile: 20px;
+
+$breakpoints: (
+	mobile: $mobile,
+	tablet: $tablet,
+	desktop: $desktop,
+	mlarge: $mlarge,
+	large: $large,
+	xlarge: $xlarge,
+	gutterMobile: $gutterMobile
+);
