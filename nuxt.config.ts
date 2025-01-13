@@ -7,12 +7,12 @@ export default defineNuxtConfig({
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: '@use "@/assets/styles/tools/index.scss" as *;',
+					additionalData: '@use "@/assets/styles/tools/index.scss" as *;'
 				}
 			}
-		},
+		}
 	},
 
 	css: ['@/assets/styles/app.scss'],
-	modules: ['@nuxt/eslint', '@nuxt/image'],
+	modules: ['@nuxt/eslint', '@nuxt/image', 'nuxt-svgo']
 })
