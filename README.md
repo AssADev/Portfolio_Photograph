@@ -33,3 +33,12 @@ Locally preview production build:
 pnpm preview
 npx pnpm preview
 ```
+
+## SSL in Localhost
+
+To be able to use the visual editor of StoryBlok (https://localhost:3000):
+
+```bash
+brew install mkcert
+mkcert localhost
+```

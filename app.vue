@@ -1,7 +1,7 @@
 <template>
-  <div class="app">
-	<h1>Work in progress</h1>
-  </div>
+	<NuxtLayout>
+		<NuxtPage />
+	</NuxtLayout>
 </template>
 
 <script setup>

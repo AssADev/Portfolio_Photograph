@@ -25,3 +25,7 @@ logs
 .env
 .env.*
 !.env.example
+
+# Localhost key
+localhost.pem
+localhost-key.pem
