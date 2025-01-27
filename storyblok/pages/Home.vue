@@ -1,7 +1,8 @@
 <template>
-	<div v-editable="blok" class="px-4">
-		<StoryblokComponent v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
-	</div>
+	<main v-editable="blok" class="pages-home">
+		<h1>Home</h1>
+		<StoryblokComponent :blok="blok.titleDescription[0]" />
+	</main>
 </template>
 
 <script setup>

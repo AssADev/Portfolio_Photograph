@@ -1,7 +1,7 @@
 <template>
-	<div v-editable="blok" class="px-4">
+	<main v-editable="blok" class="pages-biography">
 		<h1>Biography</h1>
-	</div>
+	</main>
 </template>
 
 <script setup>
