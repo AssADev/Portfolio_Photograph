@@ -27,6 +27,7 @@ export default defineNuxtConfig({
 	},
 
 	css: ['@/assets/styles/app.scss'],
+
 	modules: [
 		'@nuxt/eslint',
 		'@nuxt/image',
@@ -36,6 +37,22 @@ export default defineNuxtConfig({
 			{
 				accessToken: process.env.STORYBLOK_TOKEN
 			}
-		]
-	]
+		],
+		'@nuxtjs/i18n'
+	],
+
+	i18n: {
+		locales: [
+			{ code: 'fr', iso: 'fr-FR', name: 'Français' },
+			{ code: 'en', iso: 'en-US', name: 'English' }
+		],
+		defaultLocale: 'fr',
+		strategy: 'prefix_except_default',
+		detectBrowserLanguage: {
+			useCookie: true,
+			cookieKey: 'i18n_redirected',
+			alwaysRedirect: true,
+			fallbackLocale: 'fr'
+		}
+	}
 })
