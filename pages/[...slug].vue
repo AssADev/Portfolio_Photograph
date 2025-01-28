@@ -11,7 +11,8 @@ const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : ro
 // Load Storyblok page :
 const story = await useAsyncStoryblok(slug, {
 	version: 'draft',
-	language: locale.value
+	language: locale.value,
+	resolve_links: 'link',
 })
 
 if (!story.value) router.push('/404')
